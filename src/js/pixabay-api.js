@@ -4,7 +4,7 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import axios from 'axios';
 
-const API_KEY = '44464859-33f7988efa5c5083e6b56b801';
+const API_KEY = '44528758-32c26e02cbc7bd56fd7d9b89c';
 const BASE_URL = 'https://pixabay.com/api/';
 
 export async function fetchImages(query, page = 1) {
