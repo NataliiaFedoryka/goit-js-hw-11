@@ -14,7 +14,7 @@ const refs = {
     imageSearchInput: document.querySelector('.search-input'),
     submitButton: document.querySelector('.search-btn'),
     imageList: document.querySelector('.images-list'),
-    loader: document.querySelector('.loader'),
+    loader: document.getElementById('.loader'),
 }
 
 refs.loader.style.display = 'none';
