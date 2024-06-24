@@ -35,3 +35,10 @@ export function clearGallery() {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
 }
+export function addLoader(loader) {
+  loader.classList.remove('loader-hidden');
+}
+
+export function removeLoader(loader) {
+  loader.classList.add('loader-hidden');
+}
