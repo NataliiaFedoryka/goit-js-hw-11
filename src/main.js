@@ -44,9 +44,15 @@ renderImages(data.hits);
 });
 
 function showLoader() {
-  refs.loader.classList.remove(`hidden`);
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.remove('hidden');
+  }
 }
 
 function hideLoader() {
-  refs.loader.classList.add(`hidden`);
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.add('hidden');
   }
+}
