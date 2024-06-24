@@ -5,17 +5,31 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Img</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    <div id="app">
-      <form id="search-form">
-        <input type="text" id="search-input" placeholder="Search for images..." />
-        <button type="submit">Search</button>
+  <body> 
+    <header></header>
+    <main>
+      <form action="" class="search-form">
+        <input
+          type="search"
+          class="search-input"
+          id="search-input"
+          name="userData"
+          placeholder="Search images..."
+        />
+        <button type="submit" class="search-btn">Search</button>
       </form>
-      <div id="gallery"></div>
-    </div>
     <div  id="loader" class="loader hidden"></div>
+    <ul class="images-list"></ul>
+    </main>
+    <footer></footer>
   <script type="module" src="./main.js"></script>
   <!-- <script type="module" src="./js/pixabay-api.js"></script>
   <script type="module" src="./js/render-functions.js"></script> -->

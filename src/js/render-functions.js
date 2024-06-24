@@ -1,44 +1,40 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-
-let lightbox;
-
 export function renderImages(images) {
-  const gallery = document.getElementById('gallery');
-  const markup = images
-    .map(
-      image => `
-    <a href="${image.largeImageURL}" class="gallery-item">
-      <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-      <div class="info">
-        <p><b>Likes</b> ${image.likes}</p>
-        <p><b>Views</b> ${image.views}</p>
-        <p><b>Comments</b> ${image.comments}</p>
-        <p><b>Downloads</b> ${image.downloads}</p>
-      </div>
-    </a>
-  `
-    )
-    .join('');
-
-  gallery.insertAdjacentHTML('beforeend', markup);
-
-  if (!lightbox) {
-    lightbox = new SimpleLightbox('.gallery-item', { captionDelay: 250 });
-  } else {
-    lightbox.refresh();
+  const refs = {
+    imageList: document.querySelector('.images-list'),
   }
+
+  const markup = images.map((image) => {
+    return `<li class="images-list-item">
+      <a class="img-link" href="${image.largeImageURL}">
+        <img class="img" src="${image.webformatURL}" alt="${image.tags}" />
+      </a>
+      <ul class="img-dscr">
+        <li class="img-data">
+          <p class="img-data-title">Likes</p>
+          <p class="img-data-numbers">${image.likes}</p>
+        </li>
+        <li class="img-data">
+          <p class="img-data-title">Views</p>
+          <p class="img-data-numbers">${image.views}</p>
+        </li>
+        <li class="img-data">
+          <p class="img-data-title">Comments</p>
+          <p class="img-data-numbers">${image.comments}</p>
+        </li>
+        <li class="img-data">
+          <p class="img-data-title">Downloads</p>
+          <p class="img-data-numbers">${image.downloads}</p>
+        </li>
+      </ul>
+    </li>`;
+  }).join('');
+
+  refs.imageList.innerHTML = markup;
 }
 
 export function clearGallery() {
-  const gallery = document.getElementById('gallery');
-  gallery.innerHTML = '';
-}
-export function addLoader(loader) {
-  loader.classList.remove('loader-hidden');
-}
-
-export function removeLoader(loader) {
-  loader.classList.add('loader-hidden');
+  const refs = {
+    imageList: document.querySelector('.images-list'),
+  }
+  refs.imageList.innerHTML = '';
 }
