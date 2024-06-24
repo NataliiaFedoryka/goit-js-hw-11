@@ -44,14 +44,9 @@ renderImages(data.hits);
 });
 
 function showLoader() {
-  const loader = document.createElement('div');
-  loader.className = 'loader';
-  document.body.appendChild(loader);
+  refs.loader.classList.remove(`hidden`);
 }
 
 function hideLoader() {
-  const loader = document.querySelector('.loader');
-  if (loader) {
-    loader.remove();
+  refs.loader.classList.add(`hidden`);
   }
-}
