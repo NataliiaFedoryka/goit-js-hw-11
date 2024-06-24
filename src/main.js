@@ -1,3 +1,4 @@
+import './css/styles.css';
 import { fetchImages } from './js/pixabay-api.js';
 import { renderImages, clearGallery } from './js/render-functions.js';
 import iziToast from 'izitoast';
